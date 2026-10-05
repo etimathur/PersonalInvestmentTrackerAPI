@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/PersonalInvestmentTracker.Api.props" />
+</Project>

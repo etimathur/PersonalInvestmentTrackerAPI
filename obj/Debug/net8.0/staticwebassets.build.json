@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "YbhpnGaIYDbrn3xZhuH33E1Xo6/+SNphNvS9dpIZX0c=",
+  "Source": "PersonalInvestmentTracker.Api",
+  "BasePath": "_content/PersonalInvestmentTracker.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
