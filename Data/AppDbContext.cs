@@ -11,4 +11,16 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<Sip> Sips { get; set; }
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Sip>()
+            .Property(s => s.MonthlyAmount)
+            .HasPrecision(18, 2);
+
+        modelBuilder.Entity<Sip>()
+            .Property(s => s.ExpectedReturns)
+            .HasPrecision(5, 2);
+    }
 }
