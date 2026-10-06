@@ -19,8 +19,9 @@ public class MutualFundService
         );
 
         request.Headers.UserAgent.ParseAdd(
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/140.0 Safari/537.36"
+            "PersonalInvestmentTracker/1.0"
         );
+        request.Headers.Accept.ParseAdd("application/json");
 
         var response = await _httpClient.SendAsync(request);
         response.EnsureSuccessStatusCode();
@@ -41,8 +42,9 @@ public class MutualFundService
         );
 
         request.Headers.UserAgent.ParseAdd(
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/140.0 Safari/537.36"
+            "PersonalInvestmentTracker/1.0"
         );
+        request.Headers.Accept.ParseAdd("application/json");
 
         var response = await _httpClient.SendAsync(request);
         response.EnsureSuccessStatusCode();
