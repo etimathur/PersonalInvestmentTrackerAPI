@@ -27,6 +27,14 @@ public class MutualFundService
         response.EnsureSuccessStatusCode();
 
         var content = await response.Content.ReadAsStringAsync();
+
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(
+                $"mfnav returned {(int)response.StatusCode} {response.StatusCode}: {content}"
+            );
+        }
+
         var result = JsonSerializer.Deserialize<MutualFundsNav>(content, new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true
@@ -50,6 +58,14 @@ public class MutualFundService
         response.EnsureSuccessStatusCode();
 
         var content = await response.Content.ReadAsStringAsync();
+
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(
+                $"mfnav returned {(int)response.StatusCode} {response.StatusCode}: {content}"
+            );
+        }
+        
         var result = JsonSerializer.Deserialize<MutualFundHistory>(content, new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true

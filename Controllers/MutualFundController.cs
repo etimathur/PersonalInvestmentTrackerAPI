@@ -25,9 +25,15 @@ public class MutualFundController : ControllerBase
         request.Headers.Accept.ParseAdd("application/json");
 
         var response = await _httpClient.SendAsync(request);
-        response.EnsureSuccessStatusCode();
-
         var content = await response.Content.ReadAsStringAsync();
+
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(
+                $"mfnav returned {(int)response.StatusCode} {response.StatusCode}: {content}"
+            );
+        }
+        
         return Ok(content);
     }
     
