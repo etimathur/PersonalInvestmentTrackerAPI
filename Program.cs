@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using PersonalInvestmentTracker.Api.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddApplicationInsightsTelemetry();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
