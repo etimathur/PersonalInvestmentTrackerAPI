@@ -14,6 +14,8 @@ public class MutualFundController : ControllerBase
     [HttpGet("search")]
     public async Task<IActionResult> SearchMutualFunds([FromQuery] string query)
     {
+        Console.WriteLine("### NEW MFNAV CONTROLLER VERSION ###");
+        
         var request = new HttpRequestMessage(
             HttpMethod.Get,
             $"https://mfnav.in/api/funds/search?q={query}&page=1&page_size=2"
@@ -33,7 +35,7 @@ public class MutualFundController : ControllerBase
                 $"mfnav returned {(int)response.StatusCode} {response.StatusCode}: {content}"
             );
         }
-        
+
         return Ok(content);
     }
     

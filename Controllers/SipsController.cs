@@ -62,6 +62,8 @@ public class SipsController : ControllerBase
     [HttpGet("currentPortfolioValue")]
     public async Task<IActionResult> GetCurrentPortfolioValue()
     {
+        Console.WriteLine("### NEW MFNAV CONTROLLER VERSION ###"); 
+        
         var sips = await _context.Sips.ToListAsync();
         decimal totalValue = 0;
         foreach (var sip in sips)
